@@ -68,8 +68,6 @@ public class PlayerMovement : MonoBehaviour
         //make sure player doesn't flip over
         hitEnemyAction();
 
-        body.rotation = 0;
-
         FlipPlayer();
 
         animations();
