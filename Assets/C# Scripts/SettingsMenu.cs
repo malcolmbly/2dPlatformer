@@ -16,31 +16,28 @@ public class SettingsMenu : MonoBehaviour
     private Toggle hardToggle;
     public Difficulty DifficultySetting { get; set; }
 
-
     public void LoadMainMenu()
     {
         UpdateDifficulty();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void UpdateDifficulty()
     {
-        difficultyToggle = GetComponent<ToggleGroup>();
-        Toggle activeDifficultyToggle = difficultyToggle.GetFirstActiveToggle();
 
-        easyToggle = GetComponent<Toggle>();
-        mediumToggle = GetComponent<Toggle>();
-        hardToggle = GetComponent<Toggle>();
+        easyToggle = GameObject.Find("easyToggle").GetComponent<Toggle>();
+        mediumToggle = GameObject.Find("mediumToggle").GetComponent<Toggle>();
+        hardToggle = GameObject.Find("hardToggle").GetComponent<Toggle>();
 
-        if (easyToggle.IsActive())
+        if (easyToggle.isOn)
         {
             GameParams.GameDifficulty = Difficulty.Easy;
 
-        } else if (mediumToggle.IsActive())
+        } else if (mediumToggle.isOn)
         {
             GameParams.GameDifficulty = Difficulty.Medium;
 
-        } else if (hardToggle.IsActive())
+        } else if (hardToggle.isOn)
         {
             GameParams.GameDifficulty = Difficulty.Hard;
         }
