@@ -21,8 +21,8 @@ public static class GameParams
 
     private static Dictionary<Difficulty, int> PlayerSpeedDict = new Dictionary<Difficulty, int>{
         { Difficulty.Easy, 5 },
-        { Difficulty.Medium, 7 },
-        { Difficulty.Hard, 10 }
+        { Difficulty.Medium, 10 },
+        { Difficulty.Hard, 25 }
     };
 
     private static Dictionary<Difficulty, int> EnemySizeDict = new Dictionary<Difficulty, int>{

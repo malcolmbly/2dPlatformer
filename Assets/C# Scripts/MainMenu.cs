@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void Awake()
     {
-        DontDestroyOnLoad(GameObject.Find("difficultyToggle").GetComponent<Toggle>());
+        
     }
     public void PlayGame()
     {
