@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,46 +11,41 @@ public enum Difficulty
 public class SettingsMenu : MonoBehaviour
 {
     public ToggleGroup difficultyToggle;
+    private Toggle easyToggle;
+    private Toggle mediumToggle;
+    private Toggle hardToggle;
     public Difficulty DifficultySetting { get; set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LoadMainMenu()
     {
-        Difficulty difficultySetting = this.DifficultySetting();
-        DontDestroyOnLoad(difficultySetting);
-        SceneManager.LoadScene("MainMenu");
+        UpdateDifficulty();
+        SceneManager.LoadScene(2);
     }
 
-    public void UpdateDifficulty()
+    private void UpdateDifficulty()
     {
-        switch (difficultyToggle) 
+        difficultyToggle = GetComponent<ToggleGroup>();
+        Toggle activeDifficultyToggle = difficultyToggle.GetFirstActiveToggle();
+
+        easyToggle = GetComponent<Toggle>();
+        mediumToggle = GetComponent<Toggle>();
+        hardToggle = GetComponent<Toggle>();
+
+        if (easyToggle.IsActive())
         {
-            case Difficulty.Easy:
-                DifficultySetting = Difficulty.Easy;
-                break;
-            case Difficulty.Medium:
-                DifficultySetting = Difficulty.Easy;
-                break;
-            case Difficulty.Hard:
-                DifficultySetting = Difficulty.Easy;
-                break;
+            GameParams.GameDifficulty = Difficulty.Easy;
 
+        } else if (mediumToggle.IsActive())
+        {
+            GameParams.GameDifficulty = Difficulty.Medium;
 
+        } else if (hardToggle.IsActive())
+        {
+            GameParams.GameDifficulty = Difficulty.Hard;
         }
-            
+
+       
     }
 
 }

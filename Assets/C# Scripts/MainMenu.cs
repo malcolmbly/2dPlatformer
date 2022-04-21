@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+
     public void Awake()
     {
         DontDestroyOnLoad(GameObject.Find("difficultyToggle").GetComponent<Toggle>());
     }
     public void PlayGame()
     {
+
         SceneManager.LoadScene("Level #1");
     }
 

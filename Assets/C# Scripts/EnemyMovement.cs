@@ -10,10 +10,10 @@ public class EnemyMovement : MonoBehaviour
    
     //This is the declaration for the rigid body on the player
     private Rigidbody2D body;
-    [SerializeField] private int enemySize = 6;
+    [SerializeField] private int enemySize = GameParams.GetEnemySize();
     private bool left = false;
     private int timeStuck = 0;
-    [SerializeField] private float speed = 0.03f; 
+    [SerializeField] private float speed = GameParams.GetEnemySpeed(); 
 
     /// <summary>
     /// Every time you start the game the script will be loaded on the player and the

@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Size of the player in the game
-    [SerializeField] private int playerSize = 6;
+    [SerializeField] private int playerSize = GameParams.GetPlayerSpeed();
     private float horizontalInput;
     //is the player hitting the enemy?
     private bool hitEnemy;
