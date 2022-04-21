@@ -187,7 +187,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.19772753, g: 0.4056604, b: 0.28085786, a: 0.40392157}
     m_PressedColor: {r: 0.2437403, g: 0.745283, b: 0.27740854, a: 0.6509804}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.15147735, g: 0.6509434, b: 0.26826057, a: 0.42352942}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -435,7 +435,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.73839
+  field of view: 54.38091
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
