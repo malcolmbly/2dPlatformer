@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Size of the player in the game
-    [SerializeField] private int playerSize = 6;
+    [SerializeField] private int playerSize;
     private float horizontalInput;
     //is the player hitting the enemy?
     private bool hitEnemy;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     //"SerializeField" Makes the player speed available on the unity GUI.
-    [SerializeField] private float speed;
+    private float speed = GameParams.GetPlayerSpeed();
 
     //How high the player jumps
     [SerializeField] private float jumpHeight;
