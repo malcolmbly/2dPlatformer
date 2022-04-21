@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
     /// This method determines whether the player is going to jump (if space is pressed).
     /// If the player is on the ground or on the side of a wall object they can jump.
     /// </summary>
-    private void Jump()
+    public bool Jump()
     {
         //Jumping - if the space key is pressed
         if (Input.GetKey(KeyCode.Space))
@@ -161,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
                 //triggers the jump animation
                 animator.SetTrigger("jump");
+                return true;
             } 
             //If the player is on the wall but not on the ground
             else if (onWall() && !isGrounded())
@@ -177,8 +178,11 @@ public class PlayerMovement : MonoBehaviour
                     body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
                 }
                 wallJumpCoolDown = 0;
+                return true;
             }
+            
         }
+        return false;
     }
 
     /// <summary>
