@@ -24,14 +24,14 @@ public class CameraController : MonoBehaviour
         if (IsGrounded())
             jumpNotFinished = false;*/
 
-        if (Input.GetKey(KeyCode.W))
+        /*if (Input.GetKey(KeyCode.W))
             transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
         else
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);*/
 
 
         //option #2
-        //transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
 
         //If your not on the ground
         /*if (!IsGrounded())
