@@ -17,49 +17,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-
-        /*if (Input.GetKey(KeyCode.Space))
-            jumpNotFinished = true;
-
-        if (IsGrounded())
-            jumpNotFinished = false;*/
-
-        /*if (Input.GetKey(KeyCode.W))
-            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-        else
-            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);*/
-
-
         //option #2
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-
-        //If your not on the ground
-        /*if (!IsGrounded())
-        {
-            //actively jumping
-            if (OnWall())
-            {
-                transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-
-
-            } //Not actively jumping
-            else if (jumpNotFinished)
-            {
-                transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
-            } 
-            else if (Input.GetKey(KeyCode.Space))
-            {
-                
-                transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
-            }
-        
-        } else
-        {
-            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-        }*/
-
-
-
     }
 
     private bool IsGrounded()
