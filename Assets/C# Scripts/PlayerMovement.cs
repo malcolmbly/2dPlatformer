@@ -249,4 +249,9 @@ public class PlayerMovement : MonoBehaviour
         //Note*: if the player is standing on the ground the collider will NOT equal null
         return raycastHit.collider != null;
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(collider.gameObject);
+    }
 }
