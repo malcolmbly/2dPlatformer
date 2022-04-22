@@ -2376,9 +2376,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
   player: {fileID: 420995787}
-  playerCollider: {fileID: 0}
+  playerCollider: {fileID: 420995788}
 --- !u!1 &2082912750
 GameObject:
   m_ObjectHideFlags: 0
