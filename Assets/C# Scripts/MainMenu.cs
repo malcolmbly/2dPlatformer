@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
+using System.Linq;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class MainMenu : MonoBehaviour
         //get the container to hide/display the high scores
         highScoreContainer.SetActive(false);
 
-        PopulateHighScoreList();
+        PopulateHighScoreList("Assets/highScores.csv");
 
     }
     public void PlayGame()
@@ -47,12 +49,35 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void PopulateHighScoreList()
+    public void PopulateHighScoreList(string fileName)
     {
+
+
+        //example row: {"MAL",90}
+        string[] rawScores = File.ReadAllLines(fileName);
+
+        var sortedScores = from line in rawScores
+                           let fields = line.Split(',')
+                           orderby (fields[1])
+                           
+                           select line;
+
+        var topTenScores = sortedScores.Take(10);
+
         TextMeshProUGUI highScoreListText = highScoreList.GetComponent<TextMeshProUGUI>();
-        highScoreListText.SetText("1. MAL - 100\n" + 
-            "2. COL - 100\n" +
-            "3. QUA - 100");
+
+        string scoreString = "";
+        int position= 0;
+        foreach (string score in topTenScores)
+        {
+            string[] score_fields = score.Split(',');
+            string initials = score_fields[0].Substring(1, 3);
+            string points = score_fields[1];
+            position++;
+            scoreString += $"{position}. {initials} - {points}"+ "\n";
+
+        }
+        highScoreListText.SetText(scoreString);
     }
 
 }
