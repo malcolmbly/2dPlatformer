@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         //option #2
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 
     private bool IsGrounded()
