@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject highScoreContainer;
     public GameObject highScoreList;
+    public GameObject nameField;
 
     public void Awake()
     {
@@ -21,8 +22,8 @@ public class MainMenu : MonoBehaviour
 
     }
     public void PlayGame()
-    {
-
+    { 
+        GameParams.playerName = nameField.GetComponent<TMP_InputField>().text.ToUpper();
         SceneManager.LoadScene("Level #1");
     }
 
