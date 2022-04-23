@@ -6,6 +6,7 @@ public static class GameParams
 {
     //TODO As more game options/parameters are added, add them here to be set by the difficulty setting.
     public static Difficulty GameDifficulty { get; set; } = Difficulty.Medium;
+    public static string playerName {get; set;}
 
     private static Dictionary<Difficulty, int> PlayerHPDict = new Dictionary<Difficulty, int>{ 
         { Difficulty.Easy, 7 }, 
