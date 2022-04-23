@@ -23,8 +23,17 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     { 
-        GameParams.playerName = nameField.GetComponent<TMP_InputField>().text.ToUpper();
-        SceneManager.LoadScene("Level #1");
+        string name = nameField.GetComponent<TMP_InputField>().text.ToUpper();
+        if(name.Length == 0 || nameField.GetComponent<TMP_InputField>().text == "ENTER INITIALS")
+        {
+            nameField.GetComponent<TMP_InputField>().text = "ENTER INITIALS";
+        }
+        else
+        {
+            GameParams.playerName = name;
+            SceneManager.LoadScene("Level #1");
+        }
+
     }
 
     public void OpenSettings()
