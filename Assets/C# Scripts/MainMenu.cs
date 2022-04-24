@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            GameParams.playerName = name;
+            GameParams.playerName = name.ToUpper();
             SceneManager.LoadScene("Level #1");
         }
 
