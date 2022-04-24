@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     //is the player hitting the enemy?
     private bool hitEnemy;
 
+    public static bool won = false;
+
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
 
@@ -216,7 +218,8 @@ public class PlayerMovement : MonoBehaviour
         //Feature will heal the player but for now it just turns the play white. 
         if (collision.gameObject.tag == "Heal")
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = Color.cyan;
+            won = true;
         }
 
         //If the player has run into the enemy

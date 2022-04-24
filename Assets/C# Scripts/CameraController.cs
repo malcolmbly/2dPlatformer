@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
     [SerializeField] private LayerMask groundLayer, wallLayer;
     [SerializeField] private Transform player;
     [SerializeField] private BoxCollider2D playerCollider;
@@ -17,8 +16,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        //option #2
-        transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+        if (!PlayerHealth.playerDead && !PlayerMovement.won)
+            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 
     private bool IsGrounded()
