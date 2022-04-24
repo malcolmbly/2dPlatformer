@@ -33,7 +33,7 @@ public class WriteToFile : MonoBehaviour
 
         StreamWriter writer = new StreamWriter(path, true);
 
-        writer.WriteLine($"Your Score: {PlayerMovement.points}, Time of Day: {time}");
+        writer.WriteLine($"\"{GameParams.playerName}\",{PlayerMovement.points}");
 
         writer.Close();
 

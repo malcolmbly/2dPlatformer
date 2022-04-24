@@ -18,20 +18,20 @@ public class MainMenu : MonoBehaviour
         //get the container to hide/display the high scores
         highScoreContainer.SetActive(false);
 
-        PopulateHighScoreList("Assets/highScores.csv");
+        PopulateHighScoreList("Assets/TextFile/data.txt");
 
     }
     public void PlayGame()
     { 
         string name = nameField.GetComponent<TMP_InputField>().text.ToUpper();
-        if(name.Length == 0 || nameField.GetComponent<TMP_InputField>().text == "ENTER INITIALS")
+        if(name.Length == 0 || name.Equals("ENTER INITIALS"))
         {
             nameField.GetComponent<TMP_InputField>().text = "ENTER INITIALS";
         }
         else
         {
             GameParams.playerName = name.ToUpper();
-            SceneManager.LoadScene("Level #1");
+            SceneManager.LoadScene("Level #3");
         }
 
     }
@@ -68,8 +68,8 @@ public class MainMenu : MonoBehaviour
 
         var sortedScores = from line in rawScores
                            let fields = line.Split(',')
-                           orderby (fields[1])
-                           
+                           orderby (int.Parse(fields[1])) descending
+                          
                            select line;
 
         var topTenScores = sortedScores.Take(10);
