@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
+    public static float health;
     [SerializeField] private Transform playerPosition;
     [SerializeField] private bool hitEnemy = false;
     private Rigidbody2D body;
@@ -46,8 +47,8 @@ public class PlayerHealth : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
-
+    {
+        PlayerHealth.health = currentHealth;
         //if the player falls off the map
         if (playerPosition.position.y < -15)
         {

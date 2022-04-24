@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     //is the player hitting the enemy?
     private bool hitEnemy;
-
+    public static float points = 0;
     public static bool won = false;
 
     [SerializeField] private LayerMask groundLayer;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float wallJumpCoolDown;
 
+    //private WriteToFile fileWriter;
 
     //Is the player grounded
     //private bool grounded;
@@ -220,6 +221,8 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.color = Color.cyan;
             won = true;
+            points += PlayerHealth.health;
+
         }
 
         //If the player has run into the enemy
@@ -257,8 +260,13 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
     }
 
+    /// <summary>
+    /// Destroys the cheese objects.
+    /// </summary>
+    /// <param name="collider"></param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Destroy(collider.gameObject);
+        points += 1;
     }
 }

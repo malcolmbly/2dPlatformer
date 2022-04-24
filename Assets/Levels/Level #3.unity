@@ -670,6 +670,7 @@ GameObject:
   - component: {fileID: 520021011}
   - component: {fileID: 520021010}
   - component: {fileID: 520021016}
+  - component: {fileID: 520021017}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -846,6 +847,18 @@ MonoBehaviour:
   startingHealth: 5
   playerPosition: {fileID: 0}
   hitEnemy: 0
+--- !u!114 &520021017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520021009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eaf4281c2ff7c9469ec84791faa6297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &648089029
 GameObject:
   m_ObjectHideFlags: 0
