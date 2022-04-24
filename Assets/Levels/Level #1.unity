@@ -973,7 +973,6 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 12
   jumpHeight: 20
 --- !u!95 &420995791
 Animator:
@@ -2081,6 +2080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySize: 7
+  counter: 0
+  limit: 463
   speed: 0.05
 --- !u!1 &1745866152
 GameObject:
@@ -2331,7 +2332,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.228175
+  orthographic size: 9.75831
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
