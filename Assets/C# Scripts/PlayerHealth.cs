@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    private float currentHealth;
+    public float currentHealth { get; private set; }
+    [SerializeField] private Transform playerPosition;
 
     private void Awake()
     {
+        playerPosition = GetComponent<Transform>();
         currentHealth = startingHealth;
     }
 
@@ -37,6 +39,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the player falls off the map
+        if (playerPosition.position.y < -15)
+        {
+            TakeDamage(1);
+        }
+       
         
     }
 }

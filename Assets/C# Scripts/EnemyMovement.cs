@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D body;
     [SerializeField] private int enemySize = GameParams.GetEnemySize();
     private bool left = false;
-    private int timeStuck = 0;
+    [SerializeField]private int counter = 0, limit = 463;
     [SerializeField] private float speed = GameParams.GetEnemySpeed(); 
 
     /// <summary>
@@ -35,12 +35,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame of the game
     private void Update()
     {
-        timeStuck++;
-        if (timeStuck > 10000)
-        {
-            timeStuck = 0;
-            left = !left;
-        }
+        
 
         if (left)
         {
@@ -50,16 +45,19 @@ public class EnemyMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x + speed, body.velocity.y);
         }
 
+        counter++;
+        if (counter > limit)
+        {
+            counter = 0;
+            left = !left;
+            FlipPlayer(left);
+        }
+
         body.rotation = 0;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if the player if "colliding" with the ground
-        if (collision.gameObject.tag == "Wall")
-        {
-            left = !left;
-            FlipPlayer(left);
-        } 
+       
     }
 
     private void FlipPlayer(bool left)
