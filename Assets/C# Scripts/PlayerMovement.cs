@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// This script is attacted to the player object via drag and drop.
 /// </summary>
@@ -222,6 +222,8 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.color = Color.cyan;
             won = true;
             points += PlayerHealth.health;
+
+            SceneManager.LoadScene("Game Win");
 
         }
 
