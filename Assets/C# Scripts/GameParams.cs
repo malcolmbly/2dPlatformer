@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Global variables and options used for changing of difficulties.
+/// </summary>
 public static class GameParams
 {
     //TODO As more game options/parameters are added, add them here to be set by the difficulty setting.

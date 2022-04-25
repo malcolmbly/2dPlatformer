@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Test out the enemies behavior by displaying it's behavior on the console log.
+/// </summary>
 public class EnemyTest : MonoBehaviour
 {
     [SerializeField] private Animator EnemyAnim;

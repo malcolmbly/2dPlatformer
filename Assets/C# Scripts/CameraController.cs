@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private BoxCollider2D playerCollider;
     private bool jumpNotFinished = false;
     
-
     private void Awake()
     {
     }
@@ -20,6 +19,12 @@ public class CameraController : MonoBehaviour
             transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 
+    /// <summary>
+    /// Check if the player character is making contact with the terrain. 
+    /// </summary>
+    /// <returns>
+    /// If the player is touching the terrain.
+    /// </returns>
     private bool IsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(playerCollider.bounds.center, playerCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
@@ -27,6 +32,12 @@ public class CameraController : MonoBehaviour
         return raycastHit.collider != null;
     }
 
+    /// <summary>
+    /// Check if the player character is making contact with the wall.
+    /// </summary>
+    /// <returns>
+    /// If the player is touching the wall.
+    /// </returns>
     private bool OnWall()
     {
         Vector2 direction = new Vector2(player.localScale.x, 0);

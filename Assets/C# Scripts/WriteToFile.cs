@@ -6,6 +6,9 @@ using UnityEditor;
 
 using System.IO;
 
+/// <summary>
+/// Write all the data to the file.
+/// </summary>
 public class WriteToFile : MonoBehaviour
 {
 
@@ -26,6 +29,9 @@ public class WriteToFile : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Write the data of the highscore into the highscore file.
+    /// </summary>
     private static void WriteString()
     {
 
@@ -49,6 +55,9 @@ public class WriteToFile : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Read the data from the highscore file and display in the game.
+    /// </summary>
     private static void ReadString()
     {
         string path = "Assets/TextFile/data.txt";

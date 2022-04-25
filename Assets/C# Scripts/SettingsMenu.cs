@@ -8,6 +8,10 @@ public enum Difficulty
     Medium,
     Hard
 }
+
+/// <summary>
+/// Different settings available to the player when they access the setting menu
+/// </summary>
 public class SettingsMenu : MonoBehaviour
 {
     public ToggleGroup difficultyToggle;
@@ -16,12 +20,18 @@ public class SettingsMenu : MonoBehaviour
     private Toggle hardToggle;
     public Difficulty DifficultySetting { get; set; }
 
+    /// <summary>
+    /// Display the main menu with options for the player to choose.
+    /// </summary>
     public void LoadMainMenu()
     {
         UpdateDifficulty();
         SceneManager.LoadScene("MainMenu");
     }
 
+    /// <summary>
+    /// Change the difficulties of the game with the preset speed value for the enemies.
+    /// </summary>
     private void UpdateDifficulty()
     {
 
