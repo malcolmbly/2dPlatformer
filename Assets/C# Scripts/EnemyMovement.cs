@@ -12,8 +12,8 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D body;
     [SerializeField] private int enemySize = GameParams.GetEnemySize();
     private bool left = false;
-    [SerializeField]private int counter = 0, limit = 463;
-    [SerializeField] private float speed = GameParams.GetEnemySpeed(); 
+    private int counter = 0, limit = 300;
+    private float speed = 0.04f; 
 
     /// <summary>
     /// Every time you start the game the script will be loaded on the player and the

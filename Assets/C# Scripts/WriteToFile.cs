@@ -17,7 +17,6 @@ public class WriteToFile : MonoBehaviour
 
     private bool written = false;
 
-    [MenuItem("Tools/Write file")]
 
     private void Update()
     {
