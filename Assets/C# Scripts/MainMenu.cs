@@ -10,6 +10,7 @@ using System.Linq;
 /// <summary>
 /// The first screen of the game with different options for the player to choose.
 /// </summary>
+/// <author>Malcolm Bailey</author>
 public class MainMenu : MonoBehaviour
 {
     public GameObject highScoreContainer;
@@ -78,7 +79,7 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Fill a textfile with highscores and player names. 
+    /// Display highscores and player names. 
     /// </summary>
     /// <param name="fileName">File to be filled with information.</param>
     public void PopulateHighScoreList(string fileName)

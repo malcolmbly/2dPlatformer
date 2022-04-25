@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     /// they take damages and when they loses all health point.
     /// </summary>
     /// <param name="damage"></param>
+    /// <author>Collin Williams</author>
     public void TakeDamage(float damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
@@ -48,12 +49,6 @@ public class PlayerHealth : MonoBehaviour
 
             SceneManager.LoadScene("Game Over");
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

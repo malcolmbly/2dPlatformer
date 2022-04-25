@@ -12,6 +12,7 @@ public enum Difficulty
 /// <summary>
 /// Different settings available to the player when they access the setting menu
 /// </summary>
+/// /// <author>Malcolm Bailey</author>
 public class SettingsMenu : MonoBehaviour
 {
     public ToggleGroup difficultyToggle;

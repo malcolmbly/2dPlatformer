@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Display the health bar of the player's character.
 /// </summary>
+/// <author>Collin Williams</author>
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private PlayerHealth playerHealth;

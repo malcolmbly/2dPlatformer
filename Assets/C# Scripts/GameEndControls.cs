@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 /// Display the main menu screen with the options for the players to input name,
 /// change difficulties, exit and start game. 
 /// </summary>
+/// <author>Malcolm Bailey</author>
 public class GameEndControls : MonoBehaviour
 {
     /// <summary>

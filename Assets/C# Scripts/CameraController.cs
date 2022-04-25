@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 
+/// </summary>
+/// <author>Collin Williams and Quang Le</author>
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer, wallLayer;

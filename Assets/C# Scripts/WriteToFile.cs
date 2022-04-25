@@ -8,7 +8,8 @@ using System.IO;
 
 /// <summary>
 /// Write all the data to the file.
-/// </summary>
+/// </summary
+/// <author>Collin Williams</author>
 public class WriteToFile : MonoBehaviour
 {
 

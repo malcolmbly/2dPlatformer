@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// This script is attacted to the player object via drag and drop.
 /// </summary>
+/// <author>Collin Williams and Quang Le</author>
 public class PlayerMovement : MonoBehaviour
 {
     //Size of the player in the game
@@ -54,12 +55,6 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         boxCollider = GetComponent<BoxCollider2D>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame of the game

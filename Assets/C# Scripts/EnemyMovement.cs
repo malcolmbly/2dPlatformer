@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// This script is attacted to the player object via drag and drop.
 /// </summary>
+/// <author>Collin Williams</author>
 public class EnemyMovement : MonoBehaviour
 {
    
@@ -26,11 +27,6 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = new Vector3(enemySize, enemySize, enemySize);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame of the game
     private void Update()

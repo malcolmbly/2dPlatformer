@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Global variables and options used for changing of difficulties.
 /// </summary>
+/// /// <author>Malcolm Bailey</author>
 public static class GameParams
 {
     //TODO As more game options/parameters are added, add them here to be set by the difficulty setting.
@@ -49,7 +50,6 @@ public static class GameParams
     {
         return PlayerSpeedDict[GameDifficulty];
     }
-
 
     public static int GetEnemySize()
     {
