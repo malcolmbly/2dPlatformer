@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Life point of the player and behavoir related to loosing the health points.
+/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
@@ -22,6 +25,11 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
+    /// <summary>
+    /// Dictate the behaviors of the player character when 
+    /// they take damages and when they loses all health point.
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
@@ -63,14 +71,14 @@ public class PlayerHealth : MonoBehaviour
             {
                 TakeDamage(1f);
                 hitEnemy = false;
-            }
-                
-                
+            } 
         }
-
-
     }
 
+    /// <summary>
+    /// Dictate if the player hit the enemies.
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     { 
 

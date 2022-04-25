@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 /// <summary>
 /// This script is attacted to the player object via drag and drop.
 /// </summary>
@@ -34,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     private BoxCollider2D boxCollider;
     private float wallJumpCoolDown;
-
-    //private WriteToFile fileWriter;
 
     //Is the player grounded
     //private bool grounded;

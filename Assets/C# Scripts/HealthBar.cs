@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Display the health bar of the player's character.
+/// </summary>
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private PlayerHealth playerHealth;

@@ -7,6 +7,9 @@ using TMPro;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// The first screen of the game with different options for the player to choose.
+/// </summary>
 public class MainMenu : MonoBehaviour
 {
     public GameObject highScoreContainer;
@@ -21,6 +24,10 @@ public class MainMenu : MonoBehaviour
         PopulateHighScoreList("Assets/TextFile/data.txt");
 
     }
+    
+    /// <summary>
+    /// Start the first level of the game.
+    /// </summary>
     public void PlayGame()
     { 
         string name = nameField.GetComponent<TMP_InputField>().text.ToUpper();
@@ -36,16 +43,27 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Navigate to the setting window for all the options that's available to the player.
+    /// </summary>
     public void OpenSettings()
     {
         SceneManager.LoadScene("Settings");
     }
 
+    /// <summary>
+    /// Quit the game.
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();
     }
 
+    /// <summary>
+    /// Show the highest score of the past players and their name.
+    /// If the player played the game, their score is be included
+    /// on the leaderboard.
+    /// </summary>
     public void ToggleHighScores()
     {
         if (highScoreContainer.activeSelf == true)
@@ -59,10 +77,12 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Fill a textfile with highscores and player names. 
+    /// </summary>
+    /// <param name="fileName">File to be filled with information.</param>
     public void PopulateHighScoreList(string fileName)
     {
-
-
         //example row: {"MAL",90}
         string[] rawScores = File.ReadAllLines(fileName);
 
