@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
             spriteRenderer.color = Color.black;
             playerDead = true;
             playerPosition.position = new Vector3(-999,-999,-999);
+
+            SceneManager.LoadScene("Game Over");
         }
     }
 
