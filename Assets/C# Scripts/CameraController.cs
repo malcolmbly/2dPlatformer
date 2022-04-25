@@ -15,7 +15,6 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (!PlayerHealth.playerDead && !PlayerMovement.won)
             transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
     }
 
